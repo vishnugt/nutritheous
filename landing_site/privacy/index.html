@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nutritheous Privacy Policy - How we handle your data in our open-source nutrition tracking app.">
+    <title>Privacy Policy - Nutritheous</title>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 1.5rem 4rem;
+        }
+
+        .privacy-content h1 {
+            font-size: 2.5rem;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content .last-updated {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.75rem;
+            color: var(--gray-900);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content h3 {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .privacy-content p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content ul, .privacy-content ol {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-content strong {
+            color: var(--gray-800);
+        }
+
+        .privacy-highlight {
+            background: var(--gray-50);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: var(--radius-md);
+        }
+
+        .privacy-highlight p {
+            margin-bottom: 0;
+        }
+
+        /* Only apply link styles to regular content links, not buttons */
+        .privacy-content a:not(.btn-primary):not(.btn-outline):not(.back-link) {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .privacy-content a:not(.btn-primary):not(.btn-outline):not(.back-link):hover {
+            border-bottom-color: var(--primary);
+        }
+
+        /* Ensure buttons maintain their proper styling */
+        .privacy-content .btn-primary {
+            color: white !important;
+        }
+
+        .privacy-content .btn-primary:hover {
+            color: white !important;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        .cta-buttons-privacy {
+            padding-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .cta-buttons-privacy {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-buttons-privacy a {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <img src="../images/icon.png" alt="Nutritheous Logo">
+                    <span>Nutritheous</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="https://github.com/vishnugt/nutritheous" target="_blank" class="btn-outline">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <div class="privacy-content">
+        <a href="../index.html" class="back-link">← Back to Home</a>
+
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: October 27, 2024</p>
+
+        <div class="privacy-highlight">
+            <p><strong>TL;DR:</strong> Nutritheous is open-source and self-hostable. When you self-host, you have complete control over your data. For the public instance, we collect minimal data necessary for app functionality and use third-party services (OpenAI, Google Cloud) for AI analysis and image storage.</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <p>Welcome to Nutritheous. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our nutrition tracking application.</p>
+
+        <h2>Open Source & Self-Hosting</h2>
+        <p>Nutritheous is an <strong>open-source project</strong> licensed under the MIT License. The entire source code is available at <a href="https://github.com/vishnugt/nutritheous" target="_blank">github.com/vishnugt/nutritheous</a>.</p>
+
+        <p>You have the option to:</p>
+        <ul>
+            <li><strong>Self-host the application</strong> on your own infrastructure, giving you complete control over your data</li>
+            <li><strong>Use the public instance</strong> hosted at api.analyze.food</li>
+        </ul>
+
+        <p>If you self-host, this privacy policy does not apply to your instance. You are responsible for your own data handling and privacy practices.</p>
+
+        <h2>Information We Collect</h2>
+
+        <h3>Account Information</h3>
+        <p>When you create an account, we collect:</p>
+        <ul>
+            <li>Email address (used for login)</li>
+            <li>Password (stored as a secure BCrypt hash)</li>
+            <li>Profile information: age, height, weight, sex, and activity level</li>
+        </ul>
+
+        <h3>Meal Data</h3>
+        <p>When you track meals, we collect:</p>
+        <ul>
+            <li>Meal photos you upload</li>
+            <li>Text descriptions of meals</li>
+            <li>Meal type (breakfast, lunch, dinner, snack)</li>
+            <li>Timestamp of when the meal was logged</li>
+            <li>Nutrition data extracted by AI analysis</li>
+        </ul>
+
+        <h3>Usage Data</h3>
+        <p>We may collect:</p>
+        <ul>
+            <li>Device information (operating system, app version)</li>
+            <li>Log data (errors, API requests)</li>
+            <li>Analytics data to improve app performance</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+
+        <p>We use your information to:</p>
+        <ul>
+            <li><strong>Provide core functionality:</strong> Analyze meals, calculate nutrition, track your progress</li>
+            <li><strong>Personalize your experience:</strong> Calculate calorie goals based on your profile</li>
+            <li><strong>Improve the service:</strong> Fix bugs, optimize performance, add features</li>
+            <li><strong>Communicate with you:</strong> Send important updates about the service</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+
+        <h3>OpenAI (GPT-4 Vision API)</h3>
+        <p>When you upload a meal photo or provide a text description, we send this data to OpenAI's API for nutrition analysis. OpenAI's privacy policy applies to this data processing. Learn more at <a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/policies/privacy-policy</a>.</p>
+
+        <h3>Google Cloud Storage</h3>
+        <p>Meal photos are stored in Google Cloud Storage. We generate signed URLs with 24-hour expiration for secure access. Google's privacy policy applies to stored images. Learn more at <a href="https://cloud.google.com/privacy" target="_blank">cloud.google.com/privacy</a>.</p>
+
+        <h2>Data Storage & Security</h2>
+
+        <p>We take security seriously:</p>
+        <ul>
+            <li><strong>Passwords:</strong> Hashed using BCrypt before storage</li>
+            <li><strong>Authentication:</strong> JWT tokens with 24-hour expiration</li>
+            <li><strong>Database:</strong> PostgreSQL with encrypted connections</li>
+            <li><strong>Images:</strong> Stored in Google Cloud Storage with signed URLs</li>
+            <li><strong>HTTPS:</strong> All data transmission is encrypted</li>
+        </ul>
+
+        <h2>Data Retention</h2>
+
+        <p>We retain your data as long as your account is active. When you delete your account:</p>
+        <ul>
+            <li>Your account information is permanently deleted</li>
+            <li>All meal records are deleted from our database</li>
+            <li>Associated images are removed from cloud storage</li>
+            <li>Deletion is typically completed within 30 days</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+
+        <p>You have the right to:</p>
+        <ul>
+            <li><strong>Access:</strong> Request a copy of your personal data</li>
+            <li><strong>Correction:</strong> Update or correct your information through the app</li>
+            <li><strong>Deletion:</strong> Delete your account and all associated data</li>
+            <li><strong>Export:</strong> Download your meal data (feature coming soon)</li>
+            <li><strong>Self-host:</strong> Run your own instance with complete data control</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+
+        <p>Nutritheous is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+
+        <p>We may update this privacy policy from time to time. We will notify you of significant changes by:</p>
+        <ul>
+            <li>Updating the "Last Updated" date at the top of this page</li>
+            <li>Posting a notice in the app</li>
+            <li>Sending an email to your registered address (for major changes)</li>
+        </ul>
+
+        <h2>International Data Transfers</h2>
+
+        <p>If you are accessing Nutritheous from outside the country where our servers are located, your data may be transferred internationally. We take appropriate measures to ensure your data is protected in accordance with this privacy policy.</p>
+
+        <h2>Contact Us</h2>
+
+        <p>If you have questions about this privacy policy or your data, you can:</p>
+        <ul>
+            <li>Open an issue on GitHub: <a href="https://github.com/vishnugt/nutritheous/issues" target="_blank">github.com/vishnugt/nutritheous/issues</a></li>
+            <li>Review the source code to see exactly how we handle data</li>
+            <li>Self-host your own instance for complete control</li>
+        </ul>
+
+        <div class="privacy-highlight" style="margin-top: 3rem;">
+            <p><strong>Remember:</strong> Nutritheous is open source. You can audit the entire codebase, contribute improvements, or self-host for complete privacy and control over your nutrition data.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+            <div class="cta-buttons-privacy">
+                <a href="../index.html" class="btn-primary">Back to Home</a>
+                <a href="https://github.com/vishnugt/nutritheous" target="_blank" class="btn-outline">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/icon.png" alt="Nutritheous">
+                        <span>Nutritheous</span>
+                    </div>
+                    <p>Open-source, self-hostable AI-powered nutrition tracking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#how-it-works">How It Works</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.nutritheous.nutritheous_app" target="_blank">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/vishnugt/nutritheous" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/vishnugt/nutritheous#readme" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/vishnugt/nutritheous/issues" target="_blank">Report Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nutritheous. Open source project licensed under MIT. | <a href="index.html">Privacy Policy</a></p>
+                <div class="footer-social">
+                    <a href="https://github.com/vishnugt/nutritheous" target="_blank" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

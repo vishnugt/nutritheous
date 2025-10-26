@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nutritheous - Open-source, self-hostable AI-powered nutrition tracking app. Track your meals effortlessly with GPT-4 Vision technology.">
+    <meta name="keywords" content="nutrition tracking, calorie counter, AI nutrition, open source, self-hosted, meal tracker">
+    <title>Nutritheous - AI-Powered Nutrition Tracking | Open Source & Self-Hostable</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="images/icon.png" alt="Nutritheous Logo">
+                    <span>Nutritheous</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#open-source">Open Source</a>
+                    <a href="https://github.com/vishnugt/nutritheous" target="_blank" class="btn-outline">GitHub</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Open Source • Self-Hostable • Privacy-First</div>
+                    <h1>AI-Powered Nutrition Tracking Made Simple</h1>
+                    <p class="hero-subtitle">
+                        Take a photo, let AI analyze it. Track your nutrition effortlessly with GPT-4 Vision.
+                        <strong>Your data, your server, your control.</strong>
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.nutritheous.nutritheous_app" target="_blank" class="btn-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            Get it on Google Play
+                        </a>
+                        <a href="#" class="btn-secondary disabled">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                            </svg>
+                            Coming Soon on App Store
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-icon">🌟</div>
+                            <div class="stat-text">
+                                <strong>Free & Open Source</strong>
+                                <span>MIT License</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon">🔒</div>
+                            <div class="stat-text">
+                                <strong>Self-Hostable</strong>
+                                <span>Complete Control</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon">🤖</div>
+                            <div class="stat-text">
+                                <strong>AI-Powered</strong>
+                                <span>GPT-4 Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-carousel">
+                        <button class="hero-carousel-btn hero-carousel-prev" id="heroCarouselPrev" aria-label="Previous slide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                            </svg>
+                        </button>
+                        <button class="hero-carousel-btn hero-carousel-next" id="heroCarouselNext" aria-label="Next slide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                            </svg>
+                        </button>
+                        <div class="hero-carousel-track" id="heroCarouselTrack">
+                            <div class="hero-carousel-item active">
+                                <img src="images/screenshots/Screenshot_20251024_002055.jpg" alt="Home Screen">
+                            </div>
+                            <div class="hero-carousel-item">
+                                <img src="images/screenshots/Screenshot_20251024_002204.jpg" alt="Meal Upload">
+                            </div>
+                            <div class="hero-carousel-item">
+                                <img src="images/screenshots/Screenshot_20251024_002213.jpg" alt="Analytics Dashboard">
+                            </div>
+                            <div class="hero-carousel-item">
+                                <img src="images/screenshots/Screenshot_20251024_002221.jpg" alt="Nutrition Details">
+                            </div>
+                        </div>
+                        <div class="hero-carousel-dots" id="heroCarouselDots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Highlight -->
+    <section class="open-source-highlight" id="open-source">
+        <div class="container">
+            <div class="highlight-content">
+                <div class="highlight-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                </div>
+                <h2>Open Source & Self-Hostable</h2>
+                <p>
+                    Nutritheous is <strong>100% free and open source</strong>. Host it on your own server, customize it to your needs,
+                    and keep complete control over your nutrition data. No vendor lock-in, no hidden costs.
+                </p>
+                <a href="https://github.com/vishnugt/nutritheous" target="_blank" class="btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to track your nutrition effortlessly</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>AI Photo Analysis</h3>
+                    <p>Simply take a photo of your meal and let GPT-4 Vision automatically identify foods and calculate nutrition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Automatic Tracking</h3>
+                    <p>No manual calorie counting. AI extracts calories, macros, and micronutrients instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Detailed Analytics</h3>
+                    <p>Track your nutrition trends over time with beautiful charts and comprehensive statistics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Goals</h3>
+                    <p>Automatic TDEE calculation based on your age, height, weight, and activity level.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3>Smart Recognition</h3>
+                    <p>Identifies ingredients, allergens, and provides health notes for your meals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Available on Android, iOS (coming soon), and Web. Sync across all your devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy-First</h3>
+                    <p>Self-host on your own infrastructure. Your data stays under your complete control.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Fully Customizable</h3>
+                    <p>Open source means you can modify, extend, and tailor it to your exact needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Three simple steps to effortless nutrition tracking</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Snap a Photo</h3>
+                        <p>Take a picture of your meal with your phone camera or upload from gallery. You can also type a description if you prefer.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Analyzes</h3>
+                        <p>GPT-4 Vision instantly identifies ingredients, estimates portion sizes, and calculates complete nutrition data.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Track Progress</h3>
+                        <p>View your daily intake, monitor trends, and reach your health goals with beautiful analytics dashboards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p>Beautiful, intuitive interface across all platforms</p>
+            </div>
+            <div class="screenshot-slider">
+                <button class="slider-btn prev" id="prevBtn">‹</button>
+                <div class="screenshot-track" id="screenshotTrack">
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002055.jpg" alt="Home Screen">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002204.jpg" alt="Meal Upload">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002213.jpg" alt="Analytics Dashboard">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002221.jpg" alt="Nutrition Details">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002227.jpg" alt="Statistics">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/screenshots/Screenshot_20251024_002235.jpg" alt="User Profile">
+                    </div>
+                </div>
+                <button class="slider-btn next" id="nextBtn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built With Modern Technology</h2>
+                <p>Production-ready architecture with industry-standard tools</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-name">Spring Boot</div>
+                    <div class="tech-description">Backend API</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Flutter</div>
+                    <div class="tech-description">Mobile & Web</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">PostgreSQL</div>
+                    <div class="tech-description">Database</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">GPT-4 Vision</div>
+                    <div class="tech-description">AI Analysis</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Docker</div>
+                    <div class="tech-description">Containerization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Take Control of Your Nutrition?</h2>
+                <p>Download the app today or explore the open-source project</p>
+                <div class="cta-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.nutritheous.nutritheous_app" target="_blank" class="btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        </svg>
+                        Download on Google Play
+                    </a>
+                    <a href="https://github.com/vishnugt/nutritheous" target="_blank" class="btn-outline btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                        Explore Project on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/icon.png" alt="Nutritheous">
+                        <span>Nutritheous</span>
+                    </div>
+                    <p>Open-source, self-hostable AI-powered nutrition tracking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.nutritheous.nutritheous_app" target="_blank">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/vishnugt/nutritheous" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/vishnugt/nutritheous#readme" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/vishnugt/nutritheous/issues" target="_blank">Report Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nutritheous. Open source project licensed under MIT. | <a href="privacy/index.html">Privacy Policy</a></p>
+                <div class="footer-social">
+                    <a href="https://github.com/vishnugt/nutritheous" target="_blank" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
