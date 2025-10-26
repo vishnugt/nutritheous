@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://github.com/vishnugt/nutritheous</loc>
+        <lastmod>2024-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://raw.githubusercontent.com/vishnugt/nutritheous/main/landing_site/images/icon.png</image:loc>
+            <image:title>Nutritheous App Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://raw.githubusercontent.com/vishnugt/nutritheous/main/landing_site/images/screenshots/Screenshot_20251024_002055.jpg</image:loc>
+            <image:title>Nutritheous Home Screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://raw.githubusercontent.com/vishnugt/nutritheous/main/landing_site/images/screenshots/Screenshot_20251024_002204.jpg</image:loc>
+            <image:title>Nutritheous Meal Upload</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://raw.githubusercontent.com/vishnugt/nutritheous/main/landing_site/images/screenshots/Screenshot_20251024_002213.jpg</image:loc>
+            <image:title>Nutritheous Analytics Dashboard</image:title>
+        </image:image>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://github.com/vishnugt/nutritheous/tree/main/landing_site/privacy</loc>
+        <lastmod>2024-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- GitHub Repository -->
+    <url>
+        <loc>https://github.com/vishnugt/nutritheous</loc>
+        <lastmod>2024-10-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Google Play Store -->
+    <url>
+        <loc>https://play.google.com/store/apps/details?id=com.nutritheous.nutritheous_app</loc>
+        <lastmod>2024-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>

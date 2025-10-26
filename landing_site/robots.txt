@@ -1,0 +1,30 @@
+# Robots.txt for Nutritheous Landing Page
+
+User-agent: *
+Allow: /
+
+# Disallow unnecessary files
+Disallow: /js/
+Disallow: /css/
+
+# Sitemap location
+Sitemap: https://github.com/vishnugt/nutritheous/blob/main/landing_site/sitemap.xml
+
+# Crawl delay (seconds) - be respectful to servers
+Crawl-delay: 1
+
+# Allow common search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
