@@ -1,0 +1,53 @@
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: nutritheous-postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-nutritheous}
+      POSTGRES_USER: ${DB_USERNAME:-nutritheous}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-nutritheous}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - nutritheous-network
+    restart: unless-stopped
+
+  backend:
+    image: gradle:8.5-jdk17
+    container_name: nutritheous-backend
+    working_dir: /app
+    command: gradle bootRun --no-daemon
+    env_file:
+      - .env
+    environment:
+      # Override database host for Docker network
+      DB_HOST: postgres
+      # Gradle configuration
+      GRADLE_USER_HOME: /cache/gradle
+    ports:
+      - "${SERVER_PORT:-8081}:8081"
+    depends_on:
+      - postgres
+    networks:
+      - nutritheous-network
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/build.gradle:/app/build.gradle
+      - ./backend/settings.gradle:/app/settings.gradle
+      - ./backend/gradlew:/app/gradlew
+      - ./backend/gradle:/app/gradle
+      - gradle-cache:/cache/gradle
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  gradle-cache:
+
+networks:
+  nutritheous-network:
+    driver: bridge

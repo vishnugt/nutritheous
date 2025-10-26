@@ -1,0 +1,70 @@
+# Ignore files and directories that shouldn't be copied to Docker image
+
+# Build artifacts
+build/
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Gradle files (except wrapper)
+.gradle
+!gradle-wrapper.jar
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+
+# Logs
+logs/
+*.log
+
+# Test files
+src/test/
+
+# Environment files (will be passed via docker-compose)
+.env
+.env.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Node modules (if any frontend build)
+node_modules/
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+Jenkinsfile
+
+# Sample/mock data
+samplePhotos/

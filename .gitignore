@@ -1,0 +1,206 @@
+# ==========================================
+# Backend (Spring Boot / Gradle)
+# ==========================================
+
+### Gradle ###
+.gradle
+backend/build/
+backend/.gradle/
+!backend/gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### Spring Boot ###
+HELP.md
+backend/logs/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# ==========================================
+# Frontend (Flutter)
+# ==========================================
+
+### Flutter/Dart ###
+frontend/**/.dart_tool/
+frontend/**/.flutter-plugins
+frontend/**/.flutter-plugins-dependencies
+frontend/**/.packages
+frontend/**/build/
+frontend/**/*.lock
+frontend/**/.pub-cache/
+frontend/**/.pub/
+frontend/**/pubspec.lock
+
+### Flutter Generated Files ###
+frontend/**/*.g.dart
+frontend/**/*.freezed.dart
+frontend/**/*.gr.dart
+frontend/**/*.config.dart
+frontend/**/*.mocks.dart
+
+### Flutter Build Outputs ###
+frontend/**/android/app/build/
+frontend/**/ios/Flutter/App.framework
+frontend/**/ios/Flutter/Flutter.framework
+frontend/**/ios/Flutter/Flutter.podspec
+frontend/**/ios/Pods/
+frontend/**/.symlinks/
+
+# ==========================================
+# IDEs and Editors
+# ==========================================
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Eclipse ###
+.metadata
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# ==========================================
+# Operating Systems
+# ==========================================
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+### Linux ###
+*~
+.directory
+.Trash-*
+
+# ==========================================
+# Security & Credentials
+# ==========================================
+
+### Environment Files ###
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
+
+### Credentials ###
+*-credentials.json
+*-key.json
+*.pem
+*.key
+*.keystore
+*.jks
+google-services.json
+firebase-adminsdk-*.json
+
+# ==========================================
+# Logs and Temporary Files
+# ==========================================
+
+### Logs ###
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+server.log
+app.pid
+
+### Temporary Files ###
+*.cache
+*.temp
+*.tmp
+*~
+.~lock.*
+
+# ==========================================
+# Docker & Build Artifacts
+# ==========================================
+
+### Docker ###
+docker-compose.override.yml
+.dockerignore.local
+
+### Build Artifacts ###
+target/
+dist/
+*.class
+*.jar
+!gradle/wrapper/*.jar
+!.mvn/wrapper/*.jar
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+
+### Test Coverage ###
+coverage/
+.nyc_output/
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# ==========================================
+# Node (if needed)
+# ==========================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ==========================================
+# Misc
+# ==========================================
+.claude/

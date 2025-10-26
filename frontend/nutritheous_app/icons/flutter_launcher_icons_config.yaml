@@ -1,0 +1,47 @@
+# Add this configuration to your pubspec.yaml file
+# Then run: dart run flutter_launcher_icons
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  # Generate icons for both platforms
+  android: true
+  ios: true
+
+  # Path to your source icon (1024x1024px recommended)
+  image_path: "icons/icon.png"
+
+  # Minimum SDK version
+  min_sdk_android: 21
+
+  # Remove old launcher icon (optional)
+  remove_alpha_ios: true
+
+  # Adaptive icons for Android (optional but recommended)
+  # adaptive_icon_background: "#FFFFFF"  # Can be color or image path
+  # adaptive_icon_foreground: "icons/icon_foreground.png"
+
+  # Web icon (if you deploy to web)
+  web:
+    generate: true
+    image_path: "icons/icon.png"
+    background_color: "#FFFFFF"
+    theme_color: "#2196F3"
+
+  # Windows icon (if you deploy to Windows)
+  windows:
+    generate: true
+    image_path: "icons/icon.png"
+    icon_size: 48
+
+  # macOS icon (if you deploy to macOS)
+  macos:
+    generate: true
+    image_path: "icons/icon.png"
+
+# After adding above to pubspec.yaml, run:
+# 1. flutter pub get
+# 2. dart run flutter_launcher_icons
+# 3. flutter clean
+# 4. flutter run

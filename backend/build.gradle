@@ -1,0 +1,245 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.jsonschema2pojo' version '1.2.1'
+}
+
+group = 'com.nutritheous'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Database
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.flywaydb:flyway-core:10.21.0'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql:10.21.0'
+
+    // Google Cloud Storage
+    implementation platform('com.google.cloud:libraries-bom:26.28.0')
+    implementation 'com.google.cloud:google-cloud-storage'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+    // Jackson for JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // Lombok (optional, for reducing boilerplate)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Swagger/OpenAPI
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+
+    // OpenAI API Client
+    implementation 'com.theokanning.openai-gpt3-java:service:0.18.2'
+
+    // Image Processing
+    implementation 'com.twelvemonkeys.imageio:imageio-core:3.10.1'
+    implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.10.1'
+    implementation 'com.twelvemonkeys.imageio:imageio-webp:3.10.1'
+    implementation 'com.twelvemonkeys.imageio:imageio-bmp:3.10.1'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.testcontainers:testcontainers:1.19.3'
+    testImplementation 'org.testcontainers:postgresql:1.19.3'
+    testImplementation 'org.testcontainers:junit-jupiter:1.19.3'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Custom task to generate OpenAPI/Swagger documentation
+task generateSwaggerDocs {
+    group = 'documentation'
+    description = 'Generates swagger.json from running Spring Boot application'
+    dependsOn 'bootJar'
+
+    doLast {
+        def port = 8081
+        def apiDocsUrl = "http://localhost:${port}/v3/api-docs"
+        def outputDir = file("${buildDir}/docs")
+        def outputFile = file("${outputDir}/swagger.json")
+
+        // Create output directory
+        outputDir.mkdirs()
+
+        // Start Spring Boot application
+        def process = new ProcessBuilder()
+            .command('java', '-jar', "${buildDir}/libs/${project.name}-${project.version}.jar")
+            .redirectErrorStream(true)
+            .start()
+
+        println "Starting Spring Boot application..."
+
+        try {
+            // Wait for application to start (check health endpoint or API docs)
+            def maxAttempts = 60
+            def attempt = 0
+            def isReady = false
+
+            while (attempt < maxAttempts && !isReady) {
+                try {
+                    def connection = new URL(apiDocsUrl).openConnection()
+                    connection.connectTimeout = 1000
+                    connection.readTimeout = 1000
+                    connection.requestMethod = 'GET'
+
+                    if (connection.responseCode == 200) {
+                        isReady = true
+                        println "Application is ready!"
+                    }
+                } catch (Exception e) {
+                    // Application not ready yet
+                    sleep(1000)
+                    attempt++
+                }
+            }
+
+            if (!isReady) {
+                throw new GradleException("Application failed to start within timeout period")
+            }
+
+            // Download OpenAPI spec
+            println "Downloading OpenAPI specification from ${apiDocsUrl}..."
+            def spec = new URL(apiDocsUrl).text
+
+            // Save to file
+            outputFile.text = spec
+            println "Swagger documentation generated at: ${outputFile.absolutePath}"
+
+        } finally {
+            // Stop the application
+            println "Stopping Spring Boot application..."
+            process.destroy()
+            process.waitForOrKill(5000)
+        }
+    }
+}
+
+// JSON Schema to POJO Configuration
+jsonSchema2Pojo {
+    // Source directory containing JSON schemas (only .json files)
+    source = fileTree("${projectDir}/schemas") {
+        include '**/*.json'
+        exclude '**/README.md'
+    }
+
+    // Target directory for generated Java classes
+    targetDirectory = file("${buildDir}/generated-sources/js2p")
+
+    // Target package for generated classes
+    targetPackage = 'com.nutritheous.generated.models'
+
+    // Use Java 17 features
+    targetVersion = '17'
+
+    // Generate builders for immutable objects
+    generateBuilders = true
+
+    // Use primitives where possible
+    usePrimitives = false
+
+    // Include constructors
+    includeConstructors = true
+    includeConstructorPropertiesAnnotation = false
+
+    // Include standard methods
+    includeHashcodeAndEquals = true
+    includeToString = true
+
+    // Jackson annotations for JSON serialization
+    annotationStyle = 'jackson2'
+    includeJsr303Annotations = false
+
+    // Use Optional for nullable fields
+    useOptionalForGetters = false
+
+    // Date/Time handling
+    dateTimeType = 'java.time.LocalDateTime'
+    dateType = 'java.time.LocalDate'
+    timeType = 'java.time.LocalTime'
+
+    // Additional settings
+    useLongIntegers = false
+    useDoubleNumbers = true
+    includeAdditionalProperties = false
+    serializable = false
+
+    // Lombok integration (optional - remove if you prefer standard getters/setters)
+    // includeGetters = false
+    // includeSetters = false
+}
+
+// Add generated sources to compilation
+sourceSets {
+    main {
+        java {
+            srcDir "${buildDir}/generated-sources/js2p"
+        }
+    }
+}
+
+// Ensure schemas are processed before compiling
+compileJava.dependsOn generateJsonSchema2Pojo
+
+// Make build automatically generate swagger docs (disabled - run manually if needed)
+// build.finalizedBy(generateSwaggerDocs)
+
+// Load .env file for bootRun task
+bootRun {
+    // Load environment variables from .env file if it exists
+    def envFile = file('.env')
+    if (envFile.exists()) {
+        envFile.readLines().each { line ->
+            def trimmedLine = line.trim()
+            // Skip empty lines and comments
+            if (trimmedLine && !trimmedLine.startsWith('#')) {
+                def parts = trimmedLine.split('=', 2)
+                if (parts.length == 2) {
+                    def key = parts[0].trim()
+                    def value = parts[1].trim()
+                    // Remove quotes if present
+                    if (value.startsWith('"') && value.endsWith('"')) {
+                        value = value.substring(1, value.length() - 1)
+                    }
+                    if (value.startsWith("'") && value.endsWith("'")) {
+                        value = value.substring(1, value.length() - 1)
+                    }
+                    environment key, value
+                }
+            }
+        }
+        println "Loaded environment variables from .env file"
+    } else {
+        println "No .env file found, using system environment variables"
+    }
+}
