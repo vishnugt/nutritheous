@@ -12,11 +12,38 @@ The project has two parts:
 
 ## Screenshots
 
+### iOS
+
 <table>
   <tr>
-    <td><img src="screenshots/Screenshot_20251024_002055.jpg" width="250"/></td>
-    <td><img src="screenshots/Screenshot_20251024_002204.jpg" width="250"/></td>
-    <td><img src="screenshots/Screenshot_20251024_002213.jpg" width="250"/></td>
+    <td><img src="screenshots/ios/resized/IMG_2679.PNG" width="250"/></td>
+    <td><img src="screenshots/ios/resized/IMG_2681.PNG" width="250"/></td>
+    <td><img src="screenshots/ios/resized/IMG_2682.PNG" width="250"/></td>
+  </tr>
+  <tr>
+    <td align="center">Daily tracking</td>
+    <td align="center">Meal details</td>
+    <td align="center">Analytics</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/ios/resized/IMG_2683.PNG" width="250"/></td>
+    <td><img src="screenshots/ios/resized/IMG_2684.PNG" width="250"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center">Trends</td>
+    <td align="center">Profile settings</td>
+    <td></td>
+  </tr>
+</table>
+
+### Android
+
+<table>
+  <tr>
+    <td><img src="screenshots/android/Screenshot_20251024_002055.jpg" width="250"/></td>
+    <td><img src="screenshots/android/Screenshot_20251024_002204.jpg" width="250"/></td>
+    <td><img src="screenshots/android/Screenshot_20251024_002213.jpg" width="250"/></td>
   </tr>
   <tr>
     <td align="center">Daily tracking</td>
@@ -24,8 +51,8 @@ The project has two parts:
     <td align="center">Meal upload</td>
   </tr>
   <tr>
-    <td><img src="screenshots/Screenshot_20251024_002221.jpg" width="250"/></td>
-    <td><img src="screenshots/Screenshot_20251024_002227.jpg" width="250"/></td>
+    <td><img src="screenshots/android/Screenshot_20251024_002221.jpg" width="250"/></td>
+    <td><img src="screenshots/android/Screenshot_20251024_002227.jpg" width="250"/></td>
     <td></td>
   </tr>
   <tr>

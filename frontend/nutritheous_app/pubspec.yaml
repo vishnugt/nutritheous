@@ -133,10 +133,10 @@ flutter:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "icon.png"
+  image_path: "icon-square-final.png"
   min_sdk_android: 21
   # Adaptive icon for Android
-  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_background: "#FF8C5A"
   adaptive_icon_foreground: "icon.png"
   # Remove old launcher icon
   remove_alpha_ios: true

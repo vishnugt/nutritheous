@@ -161,7 +161,6 @@
 				FF0B46D7BFE73F847D177D5A /* Pods-RunnerTests.release.xcconfig */,
 				701246C68EEBD93C43E45998 /* Pods-RunnerTests.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -478,6 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.94;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritheous.nutritheousApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -661,6 +661,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.94;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritheous.nutritheousApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -684,6 +685,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.94;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritheous.nutritheousApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
