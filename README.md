@@ -22,7 +22,7 @@ The project has two parts:
   </tr>
   <tr>
     <td align="center">Daily tracking</td>
-    <td align="center">Meal details</td>
+    <td align="center">Weekly Calendar</td>
     <td align="center">Analytics</td>
   </tr>
   <tr>
@@ -32,7 +32,7 @@ The project has two parts:
   </tr>
   <tr>
     <td align="center">Trends</td>
-    <td align="center">Profile settings</td>
+    <td align="center">Upload Meal</td>
     <td></td>
   </tr>
 </table>
@@ -48,7 +48,7 @@ The project has two parts:
   <tr>
     <td align="center">Daily tracking</td>
     <td align="center">Weekly calendar</td>
-    <td align="center">Meal upload</td>
+    <td align="center">Upload Meal</td>
   </tr>
   <tr>
     <td><img src="screenshots/android/Screenshot_20251024_002221.jpg" width="250"/></td>
@@ -56,8 +56,8 @@ The project has two parts:
     <td></td>
   </tr>
   <tr>
-    <td align="center">Nutrition trends</td>
-    <td align="center">Analytics dashboard</td>
+    <td align="center">Trends</td>
+    <td align="center">Analytics</td>
     <td></td>
   </tr>
 </table>
